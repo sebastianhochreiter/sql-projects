@@ -22,3 +22,5 @@ The Customer Retention Analysis project was designed to dig deep into customer b
 - Armed with this data, the marketing team initiated targeted email campaigns with special offers and loyalty benefits. 
 - The result was a 14% return rate of customers who were previously categorized as 'churned', thereby generating additional revenue and improving customer relationships.
 
+## Contact
+For additional details about the project, or if you have an interest in consulting services, please feel free to reach out to me via email. I am available to discuss the project's specifics and how my expertise may align with your organizational needs info(a)sebastianhochreiter.at
