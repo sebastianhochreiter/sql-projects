@@ -21,3 +21,6 @@ https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/preview.w
 
 [![Alt-Text für das Bild](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg)](https://iframe.mediadelivery.net/play/186141/77818cc0-365f-4bd3-b5dd-67c5d35a84dc "Titel des Videos")
 
+[![Alt-Text für das Bild](https://img.youtube.com/vi/IBh6OpF0tWg/maxresdefault.jpg)](https://www.youtube.com/watch?v=IBh6OpF0tWg "Titel des Videos"){target="_blank"}
+
+
