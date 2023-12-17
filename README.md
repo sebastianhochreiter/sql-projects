@@ -13,3 +13,8 @@ https://github.com/sebastianhochreiter/sql-projects/assets/80312565/d5531370-097
 <div style="position:relative;padding-top:56.25%;"><iframe src="https://iframe.mediadelivery.net/embed/186141/77818cc0-365f-4bd3-b5dd-67c5d35a84dc?autoplay=false&loop=false&muted=false&preload=true&responsive=true" loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowfullscreen="true"></iframe></div>
 
 https://iframe.mediadelivery.net/play/186141/77818cc0-365f-4bd3-b5dd-67c5d35a84dc
+
+
+https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/preview.webp
+
+[![Alt-Text für das Bild]([https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg))](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/playlist.m3u8 "Titel des Videos")
