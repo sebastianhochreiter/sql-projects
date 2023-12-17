@@ -25,3 +25,5 @@ https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/preview.w
 
 <a href="http://example.com/" target="_blank">Hello, world!</a>
 
+<a href="placeholder.com" target="_blank">Opens in new tab</a>
+
