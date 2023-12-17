@@ -18,3 +18,6 @@ https://iframe.mediadelivery.net/play/186141/77818cc0-365f-4bd3-b5dd-67c5d35a84d
 https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/preview.webp
 
 [![Alt-Text für das Bild]([https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg))](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/playlist.m3u8 "Titel des Videos")
+
+[![Alt-Text für das Bild](https://vz-4d57685e-bb1.b-cdn.net/77818cc0-365f-4bd3-b5dd-67c5d35a84dc/thumbnail_22ffabdb.jpg)](https://iframe.mediadelivery.net/play/186141/77818cc0-365f-4bd3-b5dd-67c5d35a84dc "Titel des Videos")
+
