@@ -25,7 +25,10 @@ Debian 11 Minimal (12 hat aktuell keine Kompatibilität), MSSQL 2019, SSMS 19.3,
 - Anlegen Server Agents für automatische Sicherung NICHT möglich, da Linux System
 - Aktivierung von SQL Server Agent und Erstellung Job für automatische Sicherung
 - Tägliche Sicherung in der Nacht in diesem Fall völlig ausreichend
-- 
+- Email-Notificatin falls Sicherung fehlschlägt
+
+## Dokumentation
+- Ausführliche Dokumentation aller getätigten Schritte im firmeninternen Jira und Confluence
 
 
 
