@@ -4,7 +4,7 @@
 Installation von Microsoft SQL Server 2019 auf dem neuen Server, Konfiguration des Servers zur Optimierung für spezifische Anwendungsanforderungen und Anpassung an Best Practices für Sicherheit und Performance. Nach Abschluss der Installation ist die Einrichtung einer regelmäßigen Backup-Routine für alle Datenbanken erforderlich, sowie die Überprüfung der reibungslosen Verbindung zu bestehenden Anwendungen. Zudem muss eine detaillierte Dokumentation über alle durchgeführten Installationsschritte und Konfigurationseinstellungen für die internen Unterlagen angefertigt werden.
 
 ## Verwendete Technologien:
-Debian 11 Minimal (12 hat aktuell keine Kompatibilität), MSSQL 2019, SSMS 19.3, Azure Data Studio 1.47
+Debian 11 Minimal (12 hat aktuell keine Kompatibilität mit MSSQL19), MSSQL 2019, SSMS 19.3, Azure Data Studio 1.47
 
 ## OS Sicherheit und Linux Hardening:
 - Einsetzen von Debian 11 Minimal und Nachinstallation benötigter Pakete, um die Angriffsfläche so gering wie möglich zu halten
