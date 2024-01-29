@@ -16,6 +16,15 @@ Debian 11 Minimal (12 hat aktuell keine Kompatibilität), MSSQL 2019, SSMS 19.3,
 
 ## Performance des SQL Servers
 - Planung und Beratung bezüglich Hardware-Kauf und physische Installation in Firma
+- Analyse vorheriger Datenbanken um den Workflow der Applikation zu verstehen
+- Optimierung alter Queries bezüglich Zeit und Ressourcennutzung
+- Anpassung Max Memory, Cost Threshold & Max Degree of Parallelism, Erweiterung TempDB
+- Automatisierung Indexwartung
+
+## Backups
+- Anlegen Server Agents für automatische Sicherung NICHT möglich, da Linux System
+- Aktivierung von SQL Server Agent und Erstellung Job für automatische Sicherung
+- Tägliche Sicherung in der Nacht in diesem Fall völlig ausreichend
 - 
 
 
@@ -37,3 +46,5 @@ Verwendete Quellen:
 - https://www.mssqltips.com/sqlservertip/4891/sql-server-installation-best-practices/
 - https://www.bu.edu/csmet/files/2021/02/SQL-Server-2019-Installation-Guide.pdf
 - https://www.thomas-krenn.com/de/wiki/Absicherung_eines_Debian_Servers
+- https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-run-sql-server-agent-job?view=sql-server-ver16
+- https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
