@@ -60,3 +60,4 @@
 
 Verwendete Quellen:
 - https://learn.microsoft.com/de-de/windows-server/get-started/editions-comparison-windows-server-2022?tabs=full-comparison
+- https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
