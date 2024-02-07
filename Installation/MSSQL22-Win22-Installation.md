@@ -13,7 +13,7 @@
 - Sicherheitswerkzeuge: Windows Defender, SSL/TLS für Verschlüsselung, SQL Server Audit.
 - Proof of Concept Erstellung mit VMware Workstation 17 Player
 
-## OS Sicherheit und Linux Hardening:
+## OS Sicherheit:
 - Netzwerksicherheit:
   - Konfiguration der Windows-Firewall, um nur spezifische Ports zuzulassen (u.a. Ändern des Default Ports 1433).
   - Einsatz von IPSec für sichere Remote-Verbindungen.
