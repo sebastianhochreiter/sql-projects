@@ -11,6 +11,7 @@
 - Datenbank-Software: Microsoft SQL Server 2022.
 - Überwachungs- und Verwaltungstools: SQL Server Management Studio (SSMS), Performance Monitor, Extended Events, SQL Server Agent.
 - Sicherheitswerkzeuge: Windows Defender, SSL/TLS für Verschlüsselung, SQL Server Audit.
+- Proof of Concept Erstellung mit VMware Workstation 17 Player
 
 ## OS Sicherheit und Linux Hardening:
 - Netzwerksicherheit:
