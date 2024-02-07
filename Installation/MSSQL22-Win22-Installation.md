@@ -16,35 +16,33 @@
 - Netzwerksicherheit:
   - Konfiguration der Windows-Firewall, um nur spezifische Ports zuzulassen (u.a. Ändern des Default Ports 1433).
   - Einsatz von IPSec für sichere Remote-Verbindungen.
+    
 - Authentifizierung und Zugriffssteuerung:
-
-- Einsatz der gemischten Authentifizierung (Windows-Authentifizierung und SQL-Authentifizierung).
+  - Einsatz der gemischten Authentifizierung (Windows-Authentifizierung und SQL-Authentifizierung).
   - Verwendung von starken Passwörtern für alle Accounts.
   - Prinzip der minimalen Rechte für Benutzer und Dienste.
   - Einrichtung von Rollenbasiertem Zugriff (RBAC).
  
- - Datenverschlüsselung:
+- Datenverschlüsselung:
   - Transparent Data Encryption (TDE) zum Schutz der Ruhe-Daten.
   - SSL/TLS zur Verschlüsselung der Datenübertragung.
- - Überwachung und Auditing:
 
+- Überwachung und Auditing:
   - Konfiguration des SQL Server Audits, um Zugriffe und sicherheitsrelevante Ereignisse zu protokollieren.
 
 ## Performance des SQL Servers
+- Anpassung der Größe und des Wachstums der Datenbankdateien und Logs.
+- Einsatz von In-Memory OLTP für hochperformante Transaktionsverarbeitung, falls benötigt.
 - Planung und Beratung bezüglich Hardware-Kauf und physische Installation in Firma
 - Analyse vorheriger Datenbanken um den Workflow der Applikation zu verstehen
 - Optimierung alter Queries bezüglich Zeit und Ressourcennutzung
 - Anpassung Max Memory, Cost Threshold & Max Degree of Parallelism, Erweiterung TempDB
 - Automatisierung Indexwartung
 
-## Backups
-- Anlegen Server Agents für automatische Sicherung NICHT möglich, da Linux System
-- Aktivierung von SQL Server Agent und Erstellung Job für automatische Sicherung
-- Tägliche Sicherung in der Nacht in diesem Fall völlig ausreichend
-- Email-Notificatin falls Sicherung fehlschlägt
+
 
 ## Dokumentation
-- Ausführliche Dokumentation aller getätigten Schritte im firmeninternen Jira und Confluence
+- Ausführliche Dokumentation aller getätigten Schritte im firmeninternen Sharepoint
 
 
 
