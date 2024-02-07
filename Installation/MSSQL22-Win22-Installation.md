@@ -59,10 +59,4 @@
 
 
 Verwendete Quellen:
-- https://learn.microsoft.com/de-de/sql/linux/sql-server-linux-setup?view=sql-server-ver16
-- https://learn.microsoft.com/de-de/sql/sql-server/editions-and-components-of-sql-server-2019?view=sql-server-ver16
-- https://www.mssqltips.com/sqlservertip/4891/sql-server-installation-best-practices/
-- https://www.bu.edu/csmet/files/2021/02/SQL-Server-2019-Installation-Guide.pdf
-- https://www.thomas-krenn.com/de/wiki/Absicherung_eines_Debian_Servers
-- https://learn.microsoft.com/en-us/sql/linux/sql-server-linux-run-sql-server-agent-job?view=sql-server-ver16
-- https://www.sqlskills.com/blogs/paul/wait-statistics-or-please-tell-me-where-it-hurts/
+- https://learn.microsoft.com/de-de/windows-server/get-started/editions-comparison-windows-server-2022?tabs=full-comparison
