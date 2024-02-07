@@ -7,7 +7,7 @@
 - Disaster Recovery: Vorgaben für Wiederherstellungszeiten (RTO) und Datenverlusttoleranzen (RPO).
 
 ## Verwendete Technologien:
-- Betriebssystem: Windows Server 2022.
+- Betriebssystem: Windows Server 2022 Standard
 - Datenbank-Software: Microsoft SQL Server 2022.
 - Überwachungs- und Verwaltungstools: SQL Server Management Studio (SSMS), Performance Monitor, Extended Events, SQL Server Agent.
 - Sicherheitswerkzeuge: Windows Defender, SSL/TLS für Verschlüsselung, SQL Server Audit.
