@@ -1,5 +1,5 @@
 # Skript für meinen Kunden
-Mein Kunde hatte mehr als 2500 Mitarbeiter in einem Excel File. Die Mitarbeiter sollten automatisiert mit PowerShell einem MSSQL Server hinzugefügt werden
+#Mein Kunde hatte mehr als 2500 Mitarbeiter in einem Excel File. Die Mitarbeiter sollten automatisiert mit PowerShell einem MSSQL Server hinzugefügt werden
 
 # Pfad zur Excel-Datei
 $excelPath = "x\Nutzer.xlsx"
