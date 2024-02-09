@@ -1,6 +1,6 @@
 # Skript für meinen Kunden
-#Mein Kunde hatte mehr als 2500 Mitarbeiter in einem Excel File. Die Mitarbeiter sollten automatisiert mit PowerShell einem MSSQL Server hinzugefügt werden
-
+## Mein Kunde hatte mehr als 2500 Mitarbeiter in einem Excel File. Die Mitarbeiter sollten automatisiert mit PowerShell einem MSSQL Server hinzugefügt werden
+```powershell
 # Pfad zur Excel-Datei
 $excelPath = "x\Nutzer.xlsx"
 
@@ -31,4 +31,6 @@ EXEC sp_addrolemember '$($user.Zugang)', '$($user.Benutzername)';
         Write-Error "Fehler beim Erstellen von Login oder Benutzer für $($user.Benutzername): $_"
     }
 }
+
+```
 
