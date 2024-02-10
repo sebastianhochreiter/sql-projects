@@ -4,7 +4,7 @@
 **Vorgaben des Kunden:**
 1. **Zeitfenster für die Wartung:** Der Kunde gibt an, dass die Wartung außerhalb der Geschäftszeiten erfolgen muss, um die Produktivität nicht zu beeinträchtigen.
 2. **Fehlerbehandlung:** Der Kunde erwartet klare Protokollierung und Benachrichtigungen im Falle von Fehlern während des CheckDB-Prozesses.
-3. **Compliance-Anforderungen:** Es gibt spezifische Compliance-Anforderungen, die berücksichtigt werden müssen, konkrekt: regelmäßige Datenüberprüfungen nach PCI-DSS (Payment Card Industry Data Security Standard).
+3. **Compliance-Anforderungen:** Es gibt spezifische Compliance-Anforderungen, die berücksichtigt werden müssen, konkret: regelmäßige Datenüberprüfungen nach PCI-DSS (Payment Card Industry Data Security Standard).
 
 **Verwendete Technologien:**
 1. **SQL Server Agent:** Dies ist ein SQL Server-Dienst, der Aufträge planen und automatisieren kann. Es wird verwendet, um den CheckDB-Job zu planen und zu automatisieren.
@@ -43,3 +43,4 @@ Verwendete Quellen:
 - https://www.mssqltips.com/sqlservertutorial/2210/maintenance-tasks-for-sql-server/
 - https://ola.hallengren.com/sql-server-index-and-statistics-maintenance.html
 - https://learn.microsoft.com/en-us/sql/relational-databases/maintenance-plans/maintenance-plans?view=sql-server-ver16
+- https://learn.microsoft.com/de-de/sql/t-sql/database-console-commands/dbcc-checkdb-transact-sql?view=sql-server-ver16
