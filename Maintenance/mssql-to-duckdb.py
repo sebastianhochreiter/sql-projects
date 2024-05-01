@@ -4,7 +4,7 @@ Description: This script transfers tables from a Microsoft SQL Server database t
              saving each table as a Parquet file and then importing it into DuckDB.
 Author: Sebastian Hochreiter
 Date: 01.05.2024
-License: License: Personal Use Only
+License: Personal Use Only
 This script is provided for personal use only. Redistribution or commercial use is strictly 
 prohibited without explicit permission from the author. If you intend to use this script for 
 commercial purposes, please contact the author for licensing options.
