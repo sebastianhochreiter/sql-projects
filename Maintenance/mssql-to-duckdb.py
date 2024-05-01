@@ -1,127 +1,89 @@
+"""
+Script: transfer_tables_to_duckdb.py
+Description: This script transfers tables from a Microsoft SQL Server database to DuckDB,
+             saving each table as a Parquet file and then importing it into DuckDB.
+Author: Sebastian Hochreiter
+Date: 01.05.2024
+License: License: Personal Use Only
+This script is provided for personal use only. Redistribution or commercial use is strictly 
+prohibited without explicit permission from the author. If you intend to use this script for 
+commercial purposes, please contact the author for licensing options.
+"""
+
 import pyodbc
 import duckdb
 import pandas as pd
 from sqlalchemy import create_engine
 import time
-from cryptography.hazmat.backends import default_backend
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives import padding
-import zlib
+import os
 
-def encrypt_and_compress_data(data, password):
-    # AES-Schlüssel mit 128 Bits generieren
-    key = b'xxx'
-    
-    # Daten komprimieren
-    compressed_data = zlib.compress(data.encode())
-    
-    # AES-Verschlüsselung
-    iv = b'xxx'
-    padder = padding.PKCS7(algorithms.AES.block_size).padder()
-    padded_data = padder.update(compressed_data) + padder.finalize()
-    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
-    encryptor = cipher.encryptor()
-    encrypted_data = encryptor.update(padded_data) + encryptor.finalize()
-    
-    # Rückgabe von verschlüsselten Daten
-    return encrypted_data
-
-def decrypt_and_decompress_data(encrypted_data, password):
-    # AES-Schlüssel mit 128 Bits generieren
-    key = b'xxx'
-    
-    # AES-Entschlüsselung
-    iv = b'xxx'
-    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
-    decryptor = cipher.decryptor()
-    decrypted_data = decryptor.update(encrypted_data) + decryptor.finalize()
-    
-    # Entfernen der Padding
-    unpadder = padding.PKCS7(algorithms.AES.block_size).unpadder()
-    unpadded_data = unpadder.update(decrypted_data) + unpadder.finalize()
-    
-    # Daten dekomprimieren
-    decompressed_data = zlib.decompress(unpadded_data).decode()
-    
-    # Rückgabe von dekomprimierten Daten
-    return decompressed_data
-
-def transfer_salesorderdetail_to_duckdb():
+def transfer_tables_to_duckdb():
     start_time = time.time()
     
-    # MSSQL Verbindungsinformationen
+    # MSSQL connection information
     mssql_server = 'localhost\\MSSQLSERVER01'
-    mssql_database = 'AdventureWorks2019'
-    mssql_username = 'yyy'
-    mssql_password = 'zzz'
+    mssql_database = 'xxx'
+    mssql_username = 'xxx'
+    mssql_password = 'xxx'
     
-    # Verbindung zur MSSQL-Datenbank über SQLAlchemy herstellen
+    # Establish connection to MSSQL database using SQLAlchemy
     mssql_connection_url = f"mssql+pyodbc://{mssql_username}:{mssql_password}@{mssql_server}/{mssql_database}?driver=ODBC+Driver+17+for+SQL+Server"
     engine = create_engine(mssql_connection_url)
-    print("Verbindung zur MSSQL-Datenbank erfolgreich.")
+    print("Connection to MSSQL database successful.")
 
-    # Daten aus Sales.SalesOrderDetail in MSSQL abrufen
-    try:
-        query = "SELECT * FROM Sales.SalesOrderDetail"
-        df = pd.read_sql(query, engine)
-        print("Daten erfolgreich aus MSSQL abgerufen.")
-    except Exception as e:
-        print(f"Fehler beim Abrufen der Daten aus MSSQL: {e}")
-        return
-
-    # DuckDB Verbindungsinformationen
+    # DuckDB connection information
     duckdb_database = 'duckdb_database.db'
 
-    # Verbindung zur DuckDB-Datenbank herstellen
+    # Connect to DuckDB database
     try:
         duckdb_connection = duckdb.connect(database=duckdb_database)
-        duckdb_cursor = duckdb_connection.cursor()
-        print("Verbindung zur DuckDB-Datenbank erfolgreich.")
+        print("Connection to DuckDB database successful.")
     except Exception as e:
-        print(f"Fehler beim Verbinden zur DuckDB-Datenbank: {e}")
+        print(f"Error connecting to DuckDB database: {e}")
         return
 
-    # Parquet-Datei erstellen und Daten aus dem DataFrame schreiben
-    parquet_file_path = 'SalesOrderDetail.parquet'
+    # Retrieve all table names from MSSQL database
     try:
-        # Passwort vom Benutzer eingeben lassen
-        password = input("Geben Sie das Passwort für die Verschlüsselung ein: ")
-        
-        # Daten komprimieren und mit Passwort verschlüsseln
-        encrypted_data = encrypt_and_compress_data(df.to_json(), password)
-
-        # Parquet-Datei mit verschlüsselten Daten speichern
-        with open(parquet_file_path, 'wb') as f:
-            f.write(encrypted_data)
-
-        print(f"Daten wurden erfolgreich in {parquet_file_path} mit Komprimierung und AES-Verschlüsselung gespeichert.")
+        table_names_df = pd.read_sql_query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'", engine)
+        table_names = table_names_df['TABLE_NAME'].tolist()
+        print("Table names successfully retrieved:")
+        print(table_names)
     except Exception as e:
-        print(f"Fehler beim Speichern der Daten in Parquet: {e}")
+        print(f"Error retrieving table names: {e}")
         return
 
-    # Tabelle in DuckDB erstellen und Daten aus der Parquet-Datei importieren
+    for table_name in table_names:
+        # Fetch data from table in MSSQL
+        try:
+            query = f"SELECT * FROM {table_name}"
+            df = pd.read_sql(query, engine)
+            print(f"Data successfully fetched from table {table_name} in MSSQL.")
+            
+            # Create Parquet file and write data from DataFrame
+            parquet_file_path = f'{table_name.replace(".", "_")}.parquet'
+            df.to_parquet(parquet_file_path, index=False)
+            print(f"Data successfully saved in {parquet_file_path}.")
+            
+            # Create table in DuckDB and import data from Parquet file
+            duckdb_connection.execute(f"CREATE TABLE IF NOT EXISTS {table_name.replace('.', '_')} AS SELECT * FROM parquet_scan('{parquet_file_path}')")
+            print(f"Data successfully imported from {parquet_file_path} into table {table_name.replace('.', '_')} in DuckDB.")
+        except Exception as e:
+            print(f"Error transferring data from table {table_name} to DuckDB: {e}")
+
+    # Delete Parquet files
     try:
-        new_table_name = 'Imported_SalesOrderDetail'
-        
-        # Parquet-Datei mit verschlüsselten Daten lesen und entschlüsseln
-        with open(parquet_file_path, 'rb') as f:
-            encrypted_data = f.read()
-
-        decrypted_data = decrypt_and_decompress_data(encrypted_data, password)
-
-        df_decrypted = pd.read_json(decrypted_data)
-        duckdb_cursor.execute(f"CREATE TABLE IF NOT EXISTS {new_table_name} AS SELECT * FROM df_decrypted")
-        
-        print(f"Daten wurden erfolgreich aus {parquet_file_path} in die Tabelle {new_table_name} importiert.")
+        for table_name in table_names:
+            parquet_file_path = f'{table_name.replace(".", "_")}.parquet'
+            os.remove(parquet_file_path)
+            print(f"{parquet_file_path} successfully deleted.")
     except Exception as e:
-        print(f"Fehler beim Importieren der Daten aus Parquet: {e}")
-    finally:
-        duckdb_cursor.close()
-        duckdb_connection.close()
+        print(f"Error deleting Parquet files: {e}")
+
+    duckdb_connection.close()
 
     end_time = time.time()
     total_time = end_time - start_time
-    print(f"Gesamtzeit für die Ausführung des Skripts: {total_time} Sekunden")
+    print(f"Total execution time of the script: {total_time} seconds")
 
-# Funktion aufrufen
-transfer_salesorderdetail_to_duckdb()
+# Call the function
+transfer_tables_to_duckdb()
