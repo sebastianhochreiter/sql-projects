@@ -1,4 +1,4 @@
-# Kundeprojekt MSSQL2019 on Debian 11 converting Parquet files
+# Custom project MSSQL2019 on Debian 11 converting Parquet files
 
 ```python
 import pandas as pd
