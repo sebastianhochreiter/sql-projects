@@ -1,3 +1,5 @@
+ONLY FOR TESTING
+
 DISM /Online /Set-Edition:ServerStandard /ProductKey:xxxxx-xxxxx-xxxxx-xxxxx-xxxxx /AcceptEula
 
 AVMA und KMS Keys für Server 2019
@@ -15,7 +17,9 @@ AVMA und KMS Keys für Server 2019
  Standard 	 N69G4-B89J2-4G8F4-WWYCC-J464C
  Essentials 	 WVDHN-86M7X-466P6-VHXV7-YY726
 
-Quellen:
+ DISM /Online /Set-Edition:ServerStandard /ProductKey:N69G4-B89J2-4G8F4-WWYCC-J464C /AcceptEula
+
+Sources:
 https://www.kreyman.de/index.php/microsoft/ms-sonstiges/160-evaluierungsversion-server-2019-in-eine-vollversion-umwandeln
 https://learn.microsoft.com/en-us/windows-server/get-started/upgrade-conversion-options
 https://4sysops.com/archives/convert-windows-server-2019-evaluation-to-the-retail-edition/
